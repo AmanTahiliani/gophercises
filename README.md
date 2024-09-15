@@ -1,3 +1,4 @@
+### Author: [Aman Tahiliani](https://github.com/AmanTahiliani)
 ### Gophercises
 - [Gophercises](https://gophercises.com/) is a series of coding exercises designed to help you improve your Go programming skills.
 
