@@ -7,7 +7,6 @@ import (
 	"log"
 	"os"
 	"strconv"
-	"strings"
 	"time"
 )
 
@@ -20,7 +19,7 @@ func readCSV(filenName string) [][]string {
 	log.Println("Opening CSV file from filepath", filenName)
 	f, err := os.Open(filenName)
 	if err != nil {
-		log.Fatal("%+v", err)
+		log.Fatal("An error occured", err)
 	}
 
 	defer f.Close()
@@ -29,7 +28,7 @@ func readCSV(filenName string) [][]string {
 
 	records, err := csvReader.ReadAll()
 	if err != nil {
-		log.Fatal("%+v", err)
+		log.Fatal("An error occured", err)
 	}
 	return records
 }
@@ -50,10 +49,6 @@ func getQuestionsFromCSV(fileName string) []Question {
 
 	}
 	return questions
-}
-
-func strip(s string) string {
-	return strings.ReplaceAll(s, " ", "")
 }
 
 func askQuestion(question Question, c chan int) {
